@@ -264,7 +264,7 @@ public class taxProgram extends JFrame {
 
 
          //Update form fields.
-         txtGrossPayR.setText(String.format("%.2f",grossPay));
+         txtGrossPayR.setText(String.format("%.2f",grossPay));//This makes sure that there is 2 decimal places included in answer.
          txtFedTax.setText(String.format("%.2f", FIT)); 
          txtSSTax.setText(String.format("%.2f", SS)); 
          txtMedTax.setText(String.format("%.2f", Med));
