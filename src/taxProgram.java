@@ -12,6 +12,8 @@ import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.DefaultComboBoxModel;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 
 public class taxProgram extends JFrame {
 
@@ -77,6 +79,31 @@ public class taxProgram extends JFrame {
 		txtGrossPay.setColumns(10);
 		
 		txtDependents = new JTextField();//This is the textbox where the user inputs Dependents.
+		txtDependents.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent e) {
+				String t = txtDependents.getText();
+				int dep = 0;
+				
+				try
+				{
+					dep = Integer.parseInt(t);
+					
+					if (dep > 10)
+					{
+						txtDependents.setText("10");
+					}
+					else
+					{
+						txtDependents.setText(t.toString());
+					}
+				}
+				catch (Exception ex)
+				{
+					txtDependents.setText("0");
+				}
+			}
+		});
 		txtDependents.setHorizontalAlignment(SwingConstants.RIGHT);
 		txtDependents.setText("0");//Will default to 0 value when nothing is inputted by user.
 		txtDependents.setBounds(128, 94, 116, 22);
