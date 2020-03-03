@@ -14,6 +14,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class taxProgram extends JFrame {
 
@@ -72,6 +74,13 @@ public class taxProgram extends JFrame {
 		contentPane.add(lblPayPeriod);
 		
 		txtGrossPay = new JTextField();//This is the textbox where the user inputs Gross Pay.
+		txtGrossPay.addKeyListener(new KeyAdapter() {//This keypress event "key-typed" does not allow the user to input any decimal numbers or letters in this box. User can only input digts.
+			@Override
+			public void keyTyped(KeyEvent arg0 ) {
+				if(!Character.isDigit(arg0.getKeyChar())){
+		            arg0.consume();}
+			}
+		});
 		txtGrossPay.setHorizontalAlignment(SwingConstants.RIGHT);
 		txtGrossPay.setText("0.00");//Will default to 0.00 value when nothing is inputted by user.
 		txtGrossPay.setBounds(128, 45, 116, 22);
@@ -79,6 +88,13 @@ public class taxProgram extends JFrame {
 		txtGrossPay.setColumns(10);
 		
 		txtDependents = new JTextField();//This is the textbox where the user inputs Dependents.
+		txtDependents.addKeyListener(new KeyAdapter() {//This keypress event "key-typed" does not allow the user to input any decimal numbers or letters in this box. User can only input digts.
+			@Override
+			public void keyTyped(KeyEvent arg0) {
+				if(!Character.isDigit(arg0.getKeyChar())){
+		            arg0.consume();}
+			}
+		});
 		txtDependents.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusLost(FocusEvent e) {
