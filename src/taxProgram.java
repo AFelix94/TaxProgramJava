@@ -175,12 +175,12 @@ public class taxProgram extends JFrame {
 		contentPane.add(txtNetPay);
 		txtNetPay.setColumns(10);
 		
-		cmbMS = new JComboBox();//This is the drop down menu where the user will select marital status between options "Married" or "Single".
+		cmbMS = new JComboBox();
 		cmbMS.setModel(new DefaultComboBoxModel(new String[] {"Married", "Single"}));
 		cmbMS.setBounds(128, 146, 119, 22);
 		contentPane.add(cmbMS);
 		
-	    cmbPP = new JComboBox();//This is the drop down menu where the user will select the pay period between options "Monthly" or "Bi-Weekly"
+	    cmbPP = new JComboBox();
 		cmbPP.setModel(new DefaultComboBoxModel(new String[] {"Monthly", "Bi-Weekly"}));
 		cmbPP.setBounds(128, 205, 119, 22);
 		contentPane.add(cmbPP);
