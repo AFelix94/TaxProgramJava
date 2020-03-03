@@ -166,6 +166,14 @@ public class taxProgram extends JFrame {
 		});
 		btnExit.setBounds(551, 307, 97, 34);
 		contentPane.add(btnExit);
+		
+		JLabel lblResults = new JLabel("Results");
+		lblResults.setBounds(539, 13, 56, 16);
+		contentPane.add(lblResults);
+		
+		JLabel lblEnterData = new JLabel("Enter The Data");
+		lblEnterData.setBounds(53, 13, 86, 16);
+		contentPane.add(lblEnterData);
 	}
 
 
