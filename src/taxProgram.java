@@ -277,6 +277,7 @@ public class taxProgram extends JFrame {
          txtSSTax.setText(String.format("%.2f", SS)); 
          txtMedTax.setText(String.format("%.2f", Med));
          txtNetPay.setText(String.format("%.2f", netPay));
+         txtGrossPay.setText(String.format("%.2f", grossPay));
 		
 		
 	}
